@@ -183,6 +183,7 @@ int z = (int) (3.0 / 2.0);
 
 
 
+
 # 8/24/21 - Printing Primitives and String Concatenation
 #### using print statements in new ways
 - Apart from string literals, print statements can also display other data types
@@ -214,6 +215,14 @@ int currentHP = 10;
 int maxHP = 20;
 System.out.print(“HP: “ + currentHP + “/” + maxHP); // prints "HP 10/20"
 ```
+#### priority of concatenation
+- string concatenation has the same priority as numerical addition
+```java
+String string = 1 + 4 + "banana" + 3 + 2;
+// string is "5banana32"
+```
+
+
 
 
 # 8/24/21 - Errors
