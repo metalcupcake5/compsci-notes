@@ -274,3 +274,20 @@ x++; //increment x by 1
 x--; //decrement x by 1
 ```
 - __IMPORTANT__: only use the shortcut as its own line of code, not inside a print statement
+
+
+# 8/26/21 - Overflow, underflow, and floating-point imprecision
+## the real reason there aren't any level 1 Pokemon and Red and Blue
+
+#### an int in memory
+- the designers of Java allocated 32 bits of memory to each `int`: an `int` can represent 2^32 different numbers
+- half of them were used to represent negative numbers, half of them for positive
+
+#### overflow and underflow
+- if an int holding the maximum value of 2147483647 is increased by one, its value "wraps around" to the minimum value of -2147483647. this is called __overflow__
+
+#### glitches from overflow and underflow
+- many video games in the 1990s had glitches caused by overflow and underflow, before programmers became better at guarding against it
+
+#### floating-point imprecision
+- any arithmetic involving doubles may result in a slight rounding error
