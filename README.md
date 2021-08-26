@@ -236,3 +236,41 @@ String string = 1 + 4 + "banana" + 3 + 2;
     - run-time errors are caught when the program runs. since the compiler has already caught syntax errors by then, the only possible errors are caused by writing a program that doesn't make sense, so these are also called logic errors
     - very serious run-time errors cause the program to crash and terminate with an Exception. Most run-time errors just make the program do something different from what you intended.
         - bugs!
+
+
+
+
+# 8/26/21 - Updating the values of variables
+#### updating a variable
+- assuming that x and y have been initialized, the following lines of code are all valid
+```java
+x = 5 + 7;
+x = 7*y;
+x = x + 2;
+```
+- if the last one confuses you, realize that the computer evaluates the right side of the equation and stores the result in the variable on the left. the new value of x is the old value of x plus 2. We're just increasing x by 2
+
+#### shortcut assignment operators
+- when an arithmetic operator is combined with `=`, it's a shortcut to update x by the amount on the right hand side
+| the shortcut | means the same thing as |
+| ------------ | ----------------------- |
+| `x += y;`    | `x = x + y`             |
+| `x -= y;`    | `x = x - y`             |
+| `x *= y;`    | `x = x * y`             |
+| `x /= y;`    | `x = x / y`             |
+| `x %= y;`    | `x = x % y`             |
+- these are helpful when you understand the logic behind them
+```java
+x -= 2; //decrease x by 2
+x *= 3; //triple the value of x
+x += y; //increase x by y
+```
+
+#### even shorter shortcuts
+##### because programmers are lazy
+- increasing or decreasing the value of a variable by 1 happens to be so helpful, it has its own shortcut.
+```java
+x++; //increment x by 1
+x--; //decrement x by 1
+```
+- __IMPORTANT__: only use the shortcut as its own line of code, not inside a print statement
