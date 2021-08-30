@@ -294,3 +294,95 @@ x--; //decrement x by 1
 
 #### floating-point imprecision
 - any arithmetic involving doubles may result in a slight rounding error
+
+
+Unit 2
+======
+
+## 8/30/21 - Objects, methods, and the `String` class
+### references, instantiation, and return types
+
+#### what's an object?
+- we know that to create a variable, we msut declare it by specifying its data type
+- for primitives, assigning a value is very simple, and we have been practicing how to do it
+```java
+int x = 7;
+double y = y.;
+boolean isBreathing = true;
+```
+- a class-type variable has much more information to remember than a primitive. (compare data in `Ellipse` to `int`)
+- we dont need to only create the variable, by declaring it-we also have to create the data, by instantiating it
+- data is called an object. a class-type variable holds a reference to an object
+```java
+Square wall = new Square();
+```
+
+#### instantiating objects
+- use the `new` keyword to instantiate an object, followed by the class name and a pair of parentheses
+```java
+Square wall = new Square();
+```
+- __Strings are an exception.__ Can be created like primitives - this is a shortcut to make them easier to use. You may also instantiate them formally like other objects
+    - following lines are equivalent
+```java
+String greeting = "Hello";
+String greeting = new String("Hello");
+```
+
+#### what's a method?
+- an important feature of objects that is *not* true about primitives is: we can call methods on objects
+- a __method__ is a subroutine of code; a sequence of statements in Java
+- *usually* a method calculates a value and __returns__ it. The data type of the value it returns in the method's __return type__
+- we call a method using __dot notation__ on a variable with a reference to the object
+```java
+greeting.length()
+```
+
+#### String methods: `length()`
+- return type: `int`
+- the `length()` method computes and returns the number of characters in the String
+```java
+String greeting = "Hello";
+greeting.length(); // returns 5
+```
+
+#### using return values
+- when a method calculates a value, it returns it, and the return value can be used just like any other raw/calculated value
+```java
+String greeting = "Hello";
+int x = 2 + 3; // x is now 5
+int y = greeting.length(); // y is now 5
+
+System.out.println(x); // prints 5
+System.out.println(greeting.length()); // prints 5
+```
+
+#### parameters and arguments
+- some methods have __parameters__, which are data types it asks for inside its parentheses
+- when you call a method, the value you place inside the parentheses to satisfy the paremter is called an __argument__
+- anything you've put into a print statement is an argument
+```java
+System.out.println(x); // x is the argument
+```
+
+#### String methods: `indexOf()`
+- parameter: `String`
+- return type: `int`
+- the `indexOf()` method accepts a String as an argument and returns the location of the argument inside the String.
+```java
+String command = "Attack!";
+                //0123456
+
+command.indexOf("A");    // returns 0
+command.indexOf("k");    // returns 5
+command.indexOf("tack"); // returns 2
+```
+- the method will return the first occurrence if there are multiple
+- the method will return `-1` if the argument is not found
+```java
+String command = "Attack!";
+                //0123456
+
+command.indexOf("t");   // returns 1, not 2
+command.indexOf("g");   // returns -1; not found
+```
