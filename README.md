@@ -1,4 +1,7 @@
-# 8/16/21
+Unit 1
+======
+
+## 8/16/21
 #### IDE: Integrated Development Environment
 - An app, software program, website, where you can write/run a program
     - repl.it and BlueJ used in class
@@ -56,7 +59,7 @@ System.out.println("He screamed, "Oh no! A Zoom bomber!""); // not this
 
 
 
-# 8/18/21 - Variable
+## 8/18/21 - Variable
 #### what's a variable?
 - A memory slot that keeps track of data
 - Value my be overwritten as needed
@@ -139,7 +142,7 @@ int count = 1;
 
 
 
-# 8/20/21 - Arithmetic
+## 8/20/21 - Arithmetic
 #### copying variable values
 - The contents of a variable can also be assign to a variable
 ```java
@@ -184,7 +187,7 @@ int z = (int) (3.0 / 2.0);
 
 
 
-# 8/24/21 - Printing Primitives and String Concatenation
+## 8/24/21 - Printing Primitives and String Concatenation
 #### using print statements in new ways
 - Apart from string literals, print statements can also display other data types
 ```java
@@ -225,8 +228,8 @@ String string = 1 + 4 + "banana" + 3 + 2;
 
 
 
-# 8/24/21 - Errors
-## run time vs compile-time
+## 8/24/21 - Errors
+### run time vs compile-time
 
 #### compile-time vs run-time errors
 - compile-time
@@ -240,7 +243,7 @@ String string = 1 + 4 + "banana" + 3 + 2;
 
 
 
-# 8/26/21 - Updating the values of variables
+## 8/26/21 - Updating the values of variables
 #### updating a variable
 - assuming that x and y have been initialized, the following lines of code are all valid
 ```java
@@ -276,8 +279,8 @@ x--; //decrement x by 1
 - __IMPORTANT__: only use the shortcut as its own line of code, not inside a print statement
 
 
-# 8/26/21 - Overflow, underflow, and floating-point imprecision
-## the real reason there aren't any level 1 Pokemon and Red and Blue
+## 8/26/21 - Overflow, underflow, and floating-point imprecision
+### the real reason there aren't any level 1 Pokemon and Red and Blue
 
 #### an int in memory
 - the designers of Java allocated 32 bits of memory to each `int`: an `int` can represent 2^32 different numbers
