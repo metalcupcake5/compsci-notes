@@ -343,6 +343,7 @@ greeting.length()
 ```
 
 #### String methods: `length()`
+##### `length(int)`
 - return type: `int`
 - the `length()` method computes and returns the number of characters in the String
 ```java
@@ -370,6 +371,7 @@ System.out.println(x); // x is the argument
 ```
 
 #### String methods: `indexOf()`
+##### `indexOf(String)`
 - parameter: `String`
 - return type: `int`
 - the `indexOf()` method accepts a String as an argument and returns the location of the argument inside the String.
