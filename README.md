@@ -255,6 +255,7 @@ x = x + 2;
 
 #### shortcut assignment operators
 - when an arithmetic operator is combined with `=`, it's a shortcut to update x by the amount on the right hand side
+
 | the shortcut | means the same thing as |
 | ------------ | ----------------------- |
 | `x += y;`    | `x = x + y`             |
