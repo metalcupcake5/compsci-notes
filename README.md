@@ -392,3 +392,87 @@ String command = "Attack!";
 command.indexOf("t");   // returns 1, not 2
 command.indexOf("g");   // returns -1; not found
 ```
+
+
+
+
+## Method overloading and more String methods
+##
+
+#### method overloading
+- two different methods from the same class can have the same identifier as long as their parameter lsits are different
+    - generally they shouldn't be totally different methods; if they have the same name, they should do similar things. But in theory, they could be
+- called __method overloading__
+
+#### String methods: `substring()`(version 1)
+##### `substring(int)`
+- parameter: `int`
+- return type: `String`
+- the `substring()` method returns a copy of the String starting from the index specified by the argument
+```java
+String command = "Attack!";
+                //0123456
+
+command.substring(2);   // returns "tack!"
+command.substring(6);   // returns "!"
+command.substring(0);   // returns the whole String ("Attack!")
+```
+- if the argument is equal to its length, the method returns the empty string
+- if the argument is greater than its length or less than 0, the method crashes with a `StringIndexOutOfBoundsException`
+    - runtime error
+```java
+String command = "Attack!";
+                //0123456
+
+command.substring(7);   // returns ""
+command.substring(10);  // ERROR
+command.substring(-1);  // ERROR
+```
+
+#### String methods: `substring()`(version 2)
+##### `substring(int, int)`
+- parameters: `int`, `int`
+- return type: `String`
+- the two parameter `substring()` method returns a copy of the String starting from the index specified by the first arugment (inclusive) and ending at the index specified by the second argument (exclusive)
+```java
+"Attack!".substring(2,6);   // returns "tack"
+            // the character at 2, "t", is included
+            // the character at 6, "!", is excluded
+```
+- notice that the length of the returned String is equal to the difference of the arugments (6 - 2 = 4, `tack` has 4 letters)
+
+#### String methods: `toUpperCase()`
+##### `toUpperCase()`
+- parameters: none
+- return type: `String`
+- returns a version of the String with all alphabetic characters converted to uppercase
+```java
+String catThoughts = "Must attack shoelace!";
+
+catThoughts.toUpperCase();
+// returns "MUST ATTACK SHOELACE!"
+```
+
+#### String methods: `toLowerCase()`
+##### `toLowerCase()`
+- parameters: none
+- return type: `String`
+- returns a version of the String with all alphabetic characters converted to lowercase
+```java
+"sTOp YElling aT ME".toLowerCase();
+// returns "stop yelling at me"
+```
+
+#### common misconception
+- `.toUpperCase()` and `.toLowerCase()` __do not alter the original String__! They only return a *copy* with certain properties applied
+```java
+String catThoughts = "Must attack shoelace!";
+STring aggressiveCatThoughts = catThoughts.toUpperCase();
+/* aggressiveCatThoughts now contains the all caps version, but catThoughts has not changed */
+```
+- the String class does not contain any methods that alter the original String(other classes do). Because of this, we say that Strings are __immutable__
+- you can replace a String with a different one, but calling a method on a String does not itself change the original
+```java
+greeting = greeting.toUpperCase();
+// greeting is replaced by its all caps version
+```
