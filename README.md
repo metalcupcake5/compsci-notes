@@ -279,6 +279,8 @@ x--; //decrement x by 1
 - __IMPORTANT__: only use the shortcut as its own line of code, not inside a print statement
 
 
+
+
 ## 8/26/21 - Overflow, underflow, and floating-point imprecision
 ### the real reason there aren't any level 1 Pokemon and Red and Blue
 
@@ -294,6 +296,8 @@ x--; //decrement x by 1
 
 #### floating-point imprecision
 - any arithmetic involving doubles may result in a slight rounding error
+
+
 
 
 Unit 2
