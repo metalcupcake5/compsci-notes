@@ -476,3 +476,86 @@ STring aggressiveCatThoughts = catThoughts.toUpperCase();
 greeting = greeting.toUpperCase();
 // greeting is replaced by its all caps version
 ```
+
+
+
+
+## `static` methods and the Main class
+### `.abs()`, `.sqrt()`, `.pow()`, `.min()`, `.max()`
+
+
+#### `static` methods
+- we know that we can call methods on an object... as long as they are not `static` methods
+- for `static` methods, we can still call them using dot notation, but we call them on a *class* instead of on an object
+```java
+Math.abs(-1);
+```
+
+#### the `Math` class
+- a built-in class that is full of useful `static` methods and we don't have to instantiate a `Math` object to be able to use them
+    - (in fact, the class was designed so that you can't instantiate it)
+
+#### Math methods: `abs()` (version 1)
+##### `abs(int)`
+- parameter: `int`
+- return type: `int`
+- returns the absolute value of the argument
+```java
+Math.abs(1);  // returns 1
+Math.abs(0);  // returns 0
+Math.abs(-1); // returns 1
+```
+
+#### Math methods: `abs()` (version 2)
+##### `abs(double)`
+- parameter: `double`
+- return type: `double`
+- returns the absolute value of the argument
+```java
+Math.abs(1.0);  // returns 1.0
+Math.abs(0.0);  // returns 0.0
+Math.abs(-1.0); // returns 1.0
+```
+
+#### Math methods: `sqrt()`
+##### `sqrt(double)`
+- parameter: `double`
+- return type: `double`
+- returns the square root of the argument
+    - while the method always returns a `double`, you can use an `int` as the parameter because of widening
+```java
+Math.sqrt(9.0); // returns 3.0
+Math.sqrt(9);   // returns 3.0
+```
+*there is a `cbrt()` too, but it is not part of ap java subset*
+
+#### Math methods: `pow()`
+##### `pow(double, double)`
+- parameters: `double`, `double`
+- return type: `double`
+- returns the first argumetn raised to the power of the second argument
+    - because it converts everything to a `double`, it is common to simply multiply something by itself in order to square it, etc
+```java
+Math.pow(3,2); // returns 9.0 (3^2)
+Math.pow(2,5); // returns 32.0 (2^5)
+```
+
+#### Math methods: `min()`
+##### `min(int, int/double, double)`
+- parameters: `int`, `int` or `double`, `double`
+- return type: `int` or `double`
+- returns the smaller argument
+```java
+Math.min(4.0, 16.0); // returns 4.0
+Math.min(-75, -45);  // returns -75
+```
+
+#### Math methods: `max()`
+##### `max(int, int/double, double)`
+- parameters: `int`, `int` or `double`, `double`
+- return type: `int` or `double`
+- returns the larger argument
+```java
+Math.max(4.0, 16.0); // returns 16.0
+Math.max(-75, -45);  // returns -45
+```
