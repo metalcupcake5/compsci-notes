@@ -398,7 +398,6 @@ command.indexOf("g");   // returns -1; not found
 
 
 ## Method overloading and more String methods
-##
 
 #### method overloading
 - two different methods from the same class can have the same identifier as long as their parameter lsits are different
