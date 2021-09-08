@@ -559,3 +559,121 @@ Math.min(-75, -45);  // returns -75
 Math.max(4.0, 16.0); // returns 16.0
 Math.max(-75, -45);  // returns -45
 ```
+
+
+
+## learning to write methods!
+### switching from the User hat to the Designer hat
+
+#### hats
+- programmers have to keep two different perspectives in mind when they write code. these two perspectives are like wearing two different hats: the "user" hat and the "designer" hat
+
+#### thinking of code as the user
+- so far, we've only worn the User hat
+- to __use__ a class, generally speaking, we instantiate an object of that class
+```java
+Square wall = new Square();
+```
+- to __use__ a method, we call the method on an object(or on its class if it is a `static` method)
+```java
+wall.changeColor("gray");
+```
+
+#### thinking of code as the designer
+- wehn we design a class or method, we have to keep in mind how they will be used
+- we write classes thinking about how they will function as objects
+- when we write methods, we need to think about what arguments we need to ask for from the user, and how to compute the return value correctly
+
+#### structure of writing a method
+- this is a very simple method that takes an int as an argument and returns twice its value
+- methods have two parts: a __header__ and a __body__. The header and body together form the __definition__ of the method
+```java
+public static int doubleValue(int input)//header
+{                       // 
+    return 2 * input;   //  body
+}                       // 
+```
+
+#### the body
+- the body of a mehod is where the "code" goes (where the Java statements that end in semicolons go)
+- when a method is called, the computer stops whatever it was doing and executes the lines of code in the body of that method one by one
+```java
+public static int doubleValue(int input)
+{                       // 
+    return 2 * input;   //  body
+}                       // 
+```
+
+#### return statements
+- if a method is supposed to return a value, it must end with a __return statement__ ( or else you'll get a compile-time error).
+- a return statement consists of the reserved word `return` and then the value you're returning
+```java
+return 2 * input;
+```
+- you can return any expression, including
+    - raw values(`return 1`)
+    - mathematical expressions(`return 3 - 2;`)
+    - the value of a variable(` return x;`)
+    - the return value of another method call(`return "H".length()`)
+
+#### method headers
+- 5 parts:
+    1. access modifier
+    2. static / non-static
+    3. return type
+    4. method name (identifier)
+    5. parameter list
+```java
+public static int doubleValue(int input)
+// ^1  ^2     ^3  ^4           ^5
+```
+
+#### method headers: access modifiers
+- the only __access modifier__ we know so far is `public`
+- you need to include it, dont worry about what it does yet
+```java
+public static int doubleValue(int input)
+// ^
+```
+
+#### method headers: `static`
+- if a method isn't `static`, nothing goes here
+- we will start off writing `static` methods first because they are simpler
+```java
+public static int doubleValue(int input)
+//     ^
+```
+
+#### method headers: return type
+- indicates what the data type of the method's return value will be
+- if a method does not return a value, it uses the special return type `void` to indicate this
+```java
+public static int doubleValue(int input)
+//            ^
+```
+
+#### method headers: name
+- by convention, we use camelCase just like with variables
+```java
+public static int doubleValue(int input)
+//                ^
+```
+
+#### method headers: parameter lsit
+- in parentheses, the __parameter list__ has a list of variable declarations separated by commas. These varaibles are called __parameter variables__
+- the data types of the parameters variables match the data types of the arguments that are expected to be used to satisfy the parameters
+```java
+public static int doubleValue(int input)
+//                             ^
+```
+- using `Math.pow()` as an example
+```java
+Math.pow(3.0, 4.0); 
+// calling the method, as a user
+
+public static double pow(double base, double exponent)
+// what the method header would look like, if we could see it
+```
+- the parameter variables are initialized to the arguments that are passed in. they can then be used in the body of the method
+    - in this case, base is initialized to 3.0, and exponent is initialized to 4.0
+
