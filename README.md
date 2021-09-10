@@ -677,3 +677,45 @@ public static double pow(double base, double exponent)
 - the parameter variables are initialized to the arguments that are passed in. they can then be used in the body of the method
     - in this case, base is initialized to 3.0, and exponent is initialized to 4.0
 
+#### writing multiple methods in a class
+- in a class that has a main method, there can be other methods, too
+
+#### calling methods
+- normally, we call methods with dot notation, either on a variable holding a reference to an object (non-static methods) or on the class name (static methods)
+- however, if you call a method that is written in the same class you are already in, you don't need dot notation! Simply use `methodName()`
+- you can use your main method to test out the other methods you've written
+
+
+
+
+## `Math.random()`
+
+#### Math methods: `random()`
+##### `Math.random()`
+- parameters: none
+- return type: `double`
+- returns a psuedorandomly generated `double` between the values of 0.0, inclusive, and 1.0, exclusive
+```java
+Math.random();
+```
+
+#### does this seem helpful?
+- it seems significantly more helpful to return an `int` within a range than to return a `double` in the range [0.0, 1.0)
+- how can we use the output of Math.random() to select a whole number within a range?
+
+#### randomly generating an integer
+```java
+(int) (Math.random() * 7);
+```
+- multiplying the range [0.0, 1.0) by 7 results in the range [0.0, 7.0). When this is cast to an int, because of how truncation works, the result will be between 0 and 6(inclusive)
+    - *notice how 7 is the number we multiplied by, and there are seven possible results*
+- find a random number between 4 and 10
+```java
+(int) (Math.random() * 7) + 4;
+```
+- add 4 to the result of the previous example, so the outcomes are between 4 and 10 (inclusive)
+- formula to generate an `int` within a range
+# important
+```java
+(int) (Math.random() * numberOfPossibilities) + minimumValue;
+```
