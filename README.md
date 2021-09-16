@@ -719,3 +719,86 @@ Math.random();
 ```java
 (int) (Math.random() * numberOfPossibilities) + minimumValue;
 ```
+
+
+
+
+
+## Learning to write classes
+### blocks, scope, instances, atributes, fields, constructors
+
+#### code blocks and variable scope
+- the code that is enclosed in a set of `{ }` curly braces is called a block of code
+- the body of a class, as well as the body of a method, form blocks of code.
+```java
+public class Blah {
+    // a block
+}
+
+public static void main(String[] args){
+    // also a block
+}
+```
+
+- a variable may only be used within the block of code in which it is declared. This is called the variable's __scope__
+    - the scope of a parameter variable is the method it is a parameter for
+- when the code block ends, the variable is __out of scope__ and cannot be accessed, and its name can be reused for a different variable
+
+#### writing classes
+- review: we can write a class in order to use it as the data type of a variable. We do this when we instantiate an object of the class(also called an instance of the class) and store a reference to the object in the variable
+```java
+Circle sun = new Circle();
+```
+- we write classes to represent concepts
+- an object can remember more information than a primitive
+    - Circle class from IntroPicture project remembers its size, color, transparency, position
+
+#### parts of a class
+- the body of a class that is meant to be instantiated has 3 main parts
+    - __instance variables__
+    - __constructors__
+    - __methods__
+- all three must have access modifiers attached to them
+
+#### instance variables
+- also called __fields__ or __attributes__
+- instance variables represent the data that an object stores in its memory. They are declared(not initialized) at the start of a class body
+- the usual access modifier for instance variables is `private`
+```java
+public class NumberLinePoint {
+    private int position;
+    private String lable;
+}
+```
+
+#### constructors
+- constructors look very similar to methods but they __do not have a return type__ (not even void) and their identifier is the same as the class name. They are nearly always `public`
+- their job is to initialize the instance variables. Often, they use parameter variables to do this.
+```java
+public NumberLinePoint(int p, String l) {
+    position = p;
+    label = l;
+}
+```
+- parameter variables of a constructor can have the same name of the instance variables
+- in these cases, the `this` keyword is used to disambiguate. `this` always to the object, so `this.variableName` refers to the instance variable
+
+#### methods
+- the default access modifier is public, but exceptions are more common than with instance variables
+- think from the perspective of someone using your object. Methods are how they can actually do stuff with your object
+- a __local variable__ declared inside a method cannot be used in another method, but instance variables may be used in any method in the class
+- it is very common to write a getter method and a setter method for each instance variable in your class
+- a __getter method__ returns the instance variable. This is how the person using your object can access the variable
+    - formally known as accessor methods
+```java
+public String getLabel() {
+    return label;
+}
+```
+- a __setter method__ assigns a new value to the instance variable. This is how the person using your object can modify the variable.
+    - formally known as mutator methods
+```java
+public void setLabel(String l) {
+    label = l;
+}
+```
