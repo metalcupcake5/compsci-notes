@@ -802,3 +802,16 @@ public void setLabel(String l) {
     label = l;
 }
 ```
+
+
+
+## a note about `static`
+
+#### what does `static` actually mean?
+- `static` means that a property(field or method) of a class belongs to the class, not the objects of that class
+    - non-static example: `length()` method returns length of a String object, this method belongs to objects of the String class
+    - static example: `sqrt()` method computes a square root, doesn't need an object, this method belongs to the Math class itself
+
+#### `static` methods
+- when deciding whether to make a method `static` or not, askk if you need to use any instance variables in the method. Instance variables belong to the object, so they cannot be used inside `static` methods
+    - also simply ask if it makes more sense to ask an instance of the class to performt he method, or if it makes more sense to ask the class itself
