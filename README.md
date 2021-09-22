@@ -820,4 +820,31 @@ public void setLabel(String l) {
 
 
 
-## 
+## Memory management
+
+#### managing data
+- objects contain substantially more data than primitives. As a result, the computer manages them in its memory more conservatively
+```java
+int x = 3;
+Puppy myDog = new Puppy("Floof", 4, false, true, 78);
+```
+- variables for primitives "hold" a value, but variables for objects hold a __reference__ to their object
+
+#### memory for primitives
+- for primitives, the computer just has to remember the data type, variable name, and value
+
+#### memory for objects
+- when an object is instantiated with the `new` keyword, the object is constructed in memory
+- its variable, however, remembers only one thing: where to find the object in the memoryspace. This location is called a __reference__
+- we sometimes say the variable "points to" or "refers to" the object
+- if a reference-type(class-type) variable is used as the right hand side of an assignment, the object is NOT duplicated(would take too long to copy so much data!). Instead, the reference is copied, so we have two variables that refer to the same object
+- if you see the `new` keyword, you make a new object, so the reference changes
+- __important. the ap exam will try to trick you on this__
+
+- analogy: the object is like a TV and the references are like TV remotes
+    - we interact with the object via its references - we interact with a TV using its remote
+    - we can have several references to the same object - we can sync multiple remotes to the same TV
+
+#### automatic garbage collection
+- one facet of Java that makes it an easier language ot learn for beginners than certain other languages is that Java has __automatic garbabe collection__
+- if all of the variables that refer to an object go out of scope(or are reassigned to a different reference), then Java automatically deletes the object for its memory
