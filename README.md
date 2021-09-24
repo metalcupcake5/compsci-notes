@@ -848,3 +848,115 @@ Puppy myDog = new Puppy("Floof", 4, false, true, 78);
 #### automatic garbage collection
 - one facet of Java that makes it an easier language ot learn for beginners than certain other languages is that Java has __automatic garbabe collection__
 - if all of the variables that refer to an object go out of scope(or are reassigned to a different reference), then Java automatically deletes the object for its memory
+
+
+
+# Unit 3
+
+## Conditional Statements
+
+#### what's a conditional statement?
+- conditional statements allow us a much greater level of control of our programs: certain lines of code are executed only if particular conditions are met
+
+#### `if` statements
+```java
+if (    ) // condition of the if statement
+{
+    // these lines of code only execute if the condition is true
+    // body of the if statement
+}
+```
+- note that
+    - there is no semicolon after the condition
+    - the bod of an if statement is a code block inside the method. Variables declared inside it go out of scope when the `if` statement's body ends
+
+#### the condition
+- the condition that goes inside the parentheses should be a boolean expression
+```java
+boolean isHungry = true;
+if(isHungry){
+    // om nom nom
+}
+```
+
+#### the condition
+- like with number expressions, a boolean expression could be
+    - a raw value
+    ```java
+    if(true) // will always exexcute
+    ```
+    - a `boolean` variable
+    ```java
+    if(hasWings)
+    ```
+    - an expression that evaluates to a `boolean`
+    ```java
+    if (x < 3)
+    ```
+    - a method that returns a `boolean`
+    ```java
+    if (str1.equals(str2))
+    ```
+
+#### boolean expressions
+- just like `-` and `%` indicate math expression operations, there are operators like `<` and `!=`(does not equal) for boolean expressions that evaluate to `boolean`s
+
+| operator | meaning                  |
+| -------- | ------------------------ |
+| <        | less than                |
+| <=       | less than or equal to    |
+| >        | greater than             |
+| >=       | greater than or equal to |
+| ==       | equals                   |
+| !=       | does not equal           |
+
+#### example
+```java
+if (x < 3){
+    // this code will be executed
+    // if x is less than 3, otherwise
+    // the comipiler just skips this block
+}
+```
+
+#### CAUTION DANGER WARNING
+- in computer science, `=` is the assignment operator, `==` is our comparison operator to check for equality
+- `x = y;` takes the value of `y` and copies it into `x`
+- `x == y` evaluates to `true` if `x` and `y` are equal and to `false` if not
+- the compiler might not give you a compile-time error if you mix them up
+
+#### `else`
+- what if, when the condition evalues to `false`, we don't want it to simply skip the `if` block, we want it to do something else?
+- we can use an `else` block!
+```java
+if (x >= 5){
+    // execute if x is greater than or equal to 5
+} else {
+    //executes if x is less than 5
+}
+```
+
+#### `else if`
+- use an `else if` if you need more than 2 cases to check for
+```java
+if (x > 0) {
+    System.out.print("I'm positive");
+} else if (x < 0) {
+    System.out.print("I'm negative");
+} else {
+    System.out.print("I'm zero");
+}
+```
+
+#### common error
+- for non-void methods, the compiler checks to make sure you always return something
+- for the example below, the compiler thinks "What if all three conditions are `false`?
+```java
+if (x > 0) {
+    return "positive";
+} else if (x < 0) {
+    return "negative";
+} else if (x == 0) {
+    return "zero";
+}
+```
